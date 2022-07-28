@@ -3,6 +3,7 @@ package com.example.springbootproject;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,5 +43,14 @@ public class EmployeeService {
 		return  employeeRepository.findByFnameStartsWith(fname);
 	}
 	
-
+    public Employee update(Employee emp)
+    {
+    	return employeeRepository.save(emp);
+    }
+    
+    public Optional<Employee> id(Integer emp)
+    {
+    	return employeeRepository.findById(emp);
+    }
+    
 }
